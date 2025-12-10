@@ -98,7 +98,7 @@
           <img src="src/img/alat2.jpeg"
                alt="MobileCrane" />
           <div class="p-6">
-            <h4 class="text-xl font-bold mb-2">Mobile Crane</h4>
+            <h4 class="text-xl font-bold mb-2">XCMG</h4>
             <p class="text-gray-600 text-sm mb-3">Cocok untuk pembukaan lahan & pekerjaan berat.</p>
             <button class="px-4 py-2 bg-yellow-600 text-white rounded-md">Detail</button>
           </div>
@@ -153,7 +153,79 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="py-20">
+   <section id="contact" class="py-16 bg-white">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-blue-700">OUR CLIENTS</h2>
+        <p class="text-gray-600">All Our Company Partners are Listed Below</p>
+      </div>
+
+      <!-- WRAPPER -->
+      <div class="overflow-hidden relative max-w-6xl mx-auto">
+        <!-- SLIDER -->
+        <div id="clientSlider" class="flex gap-16 items-center transition-transform duration-700">
+
+          <!-- Logo Item -->
+          <img src="src/img/comp/posco.png" class="h-28 object-contain" alt="client">
+
+          <img src="src/img/comp/pp.png" class="h-28 object-contain" alt="client">
+
+          <img src="src/img/comp/waskita.png" class="h-28 object-contain" alt="client">
+
+          <!-- Duplikasi agar slider bisa loop mulus -->
+          <img src="src/img/comp/posco.png" class="h-28 object-contain" alt="client">
+
+          <img src="src/img/comp/pp.png" class="h-28 object-contain" alt="client">
+
+          <img src="src/img/comp/waskita.png" class="h-28 object-contain" alt="client">
+
+        </div>
+      </div>
+  </section>
+  <section id="contact" style="padding: 60px 20px; background: #2f2f2f; color: white;">
+    <div style="
+      max-width: 1200px; 
+      margin: auto; 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 40px;
+    ">
+      
+      <!-- LEFT: MAP -->
+      <div style="flex: 1 1 500px; min-width: 300px;">
+        <h2 style="margin-bottom: 10px;">LOKASI KAMI</h2>
+        <div style="width: 80px; height: 3px; background: #1e73be; margin-bottom: 20px;"></div>
+
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.548407444308!2d106.1159009!3d-6.152739399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e41ff5f3d0e52a1%3A0x7a74e5f6b31dadd3!2sX48H%2B3PG%2C%20Pamengkang%2C%20Kec.%20Kramatwatu%2C%20Kabupaten%20Serang%2C%20Banten%2042616!5e0!3m2!1sid!2sid!4v1700001234567"
+          width="100%" 
+          height="300" 
+          style="border:0; border-radius: 10px;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <!-- RIGHT: CONTACT -->
+      <div style="flex: 1 1 500px; min-width: 300px;">
+        <h2 style="margin-bottom: 10px;">HUBUNGI KAMI</h2>
+        <div style="width: 120px; height: 3px; background: #1e73be; margin-bottom: 20px;"></div>
+
+        <p style="font-size: 18px; line-height: 1.7;">
+          📍 Tonjong 01/01. Kp. Tonjong, Desa/Kelurahan Tonjong, Kec. Kramatwatu, Kab. Serang, Provinsi Banten. Kode Pos: 42161<br><br>
+          📱 +62 821-1218-7175<br><br>
+          📱 +62 821-2400-7636<br><br>
+          🌐 menara.gemilang.mandiri<br><br>
+          ✉️ menaragemilangmandiri@gmail.com
+        </p>
+      </div>
+
+    </div>
+  </section>
+    
+
+
+
+  <!-- <section id="contact" class="py-20">
     <div class="max-w-4xl mx-auto px-4">
       <h3 class="text-3xl font-bold text-center mb-8">Kontak Kami</h3>
 
@@ -175,12 +247,41 @@
         </form>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- FOOTER -->
   <footer class="bg-gray-900 text-gray-300 py-6 text-center">
     <p>&copy; 2026 Menara Gemilang Mandiri. © Yudisdwi</p>
   </footer>
 
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+<script>
+  const slider = document.getElementById("clientSlider");
+
+  let current = 0;
+  const slideWidth = 200; // geser 200px per langkah, bisa dirubah sesuai ukuran logo
+
+  function autoSlide() {
+    current += slideWidth;
+
+    // Jika sudah mencapai akhir, kembali ke awal
+    if (current >= slider.scrollWidth / 2) {
+      slider.style.transform = "translateX(0px)";
+      current = 0;
+      return;
+    }
+
+    slider.style.transform = `translateX(-${current}px)`;
+  }
+
+  setInterval(autoSlide, 2500); // ganti slide setiap 2.5 detik
+</script>
 </body>
 </html>
